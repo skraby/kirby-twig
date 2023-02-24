@@ -42,13 +42,13 @@ Download and copy this repository to `/site/plugins/kirby-twig`.
 ### Git submodule
 
 ```
-git submodule add https://github.com/amteich/kirby-twig.git site/plugins/kirby-twig
+git submodule add https://github.com/wearejust/kirby-twig.git site/plugins/kirby-twig
 ```
 
 ### Composer
 
 ```
-composer require amteich/kirby-twig
+composer require wearejust/kirby-twig
 ```
 
 ****
