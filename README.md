@@ -97,6 +97,7 @@ You can find a full list of options in the [options documentation](doc/options.m
 
 ## Credits
 
-- Maintainer: [Christian Zehetner](https://github.com/seehat)
+- Maintainer: [JUST](https://wearejust.com)
+- (previous) Maintainer: [Christian Zehetner](https://github.com/seehat)
 - Twig library: Fabien Potencier and contributors / [License](https://github.com/twigphp/Twig/blob/3.x/LICENSE)
 - Twig plugin for Kirby 2: Florens Verschelde
