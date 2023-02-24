@@ -1,10 +1,9 @@
 <?php
 
-namespace amteich\Twig;
+namespace Wearejust\Kirby\Twig;
 
 use Kirby;
 use Response;
-use Kirby\Cms\App;
 use Kirby\Toolkit\Html;
 use Kirby\Toolkit\Tpl;
 use Kirby\Toolkit\Str;
@@ -58,7 +57,7 @@ class Environment
       '*css' => 'css',
       // Skipping: e - Twig syntax is simple: {{ condition ? 'a' : 'b' }}
       '*esc' => 'esc',
-      'error' => 'amteich\Twig\Functions::error',
+      'error' => 'Wearejust\Kirby\Twig\Functions::error',
       'get' => 'get',
       '*gist' => 'gist',
       'go' => 'go',
@@ -109,7 +108,7 @@ class Environment
      * @var array
      */
     private $defaultTests = [
-      'of_type' => 'amteich\Twig\Tests::of_type',
+      'of_type' => 'Wearejust\Kirby\Twig\Tests::of_type',
     ];
 
     private $templateDir = null;
@@ -128,8 +127,8 @@ class Environment
         $options = [
             'core' => [
                 'debug' => $this->debug,
-                'strict_variables' => option('amteich.twig.strict', $this->debug),
-                'autoescape' => option('amteich.twig.autoescape', 'html'),
+                'strict_variables' => option('wearejust.twig.strict', $this->debug),
+                'autoescape' => option('wearejust.twig.autoescape', 'html'),
                 'cache' => false
             ],
             'namespace' => [
@@ -140,18 +139,18 @@ class Environment
             'paths' => [],
             'function' => array_merge(
                 $this->defaultFunctions,
-                option('amteich.twig.env.functions', [])
+                option('wearejust.twig.env.functions', [])
             ),
-            'extension' => option('amteich.twig.env.extensions', []),
-            'filter' => option('amteich.twig.env.filters', []),
+            'extension' => option('wearejust.twig.env.extensions', []),
+            'filter' => option('wearejust.twig.env.filters', []),
             'test' => array_merge(
               $this->defaultTests,
-              option('amteich.twig.env.tests', [])
+              option('wearejust.twig.env.tests', [])
           ),
         ];
 
         // Set cache directory
-        if (option('amteich.twig.cache')) {
+        if (option('wearejust.twig.cache')) {
             $options['core']['cache'] = kirby()->roots()->cache() . '/twig';
         }
 
@@ -184,7 +183,7 @@ class Environment
 
         $options['namespace'] = array_merge(
             $options['namespace'],
-            option('amteich.twig.namespaces', [])
+            option('wearejust.twig.namespaces', [])
         );
 
         $canSkip = ['snippets', 'plugins', 'assets'];
@@ -194,7 +193,7 @@ class Environment
             $loader->addPath($path, $key);
         }
 
-        $options['paths'] = option('amteich.twig.paths', []);
+        $options['paths'] = option('wearejust.twig.paths', []);
         foreach ($options['paths'] as $path) {
             $loader->addPath($path);
         }

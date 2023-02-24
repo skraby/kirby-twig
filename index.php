@@ -6,13 +6,13 @@ require_once __DIR__ . '/src/helpers.php';
 use Kirby\Cms\App;
 use Kirby\Toolkit\Tpl as Snippet;
 
-Kirby::plugin('amteich/twig', [
+Kirby::plugin('wearejust/twig', [
     'options' => [
         'usephp' => true
     ],
     'components' => [
         'template' => function (App $kirby, string $name, string $contentType = 'html', string $defaultType = 'html') {
-            return new amteich\Twig\Template($name, $contentType, $defaultType);
+            return new Wearejust\Kirby\Twig\Template($name, $contentType, $defaultType);
         },
         'snippet' => function (Kirby $kirby, string $name, array $data = []) {
             $snippets = A::wrap($name);

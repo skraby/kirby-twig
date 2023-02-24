@@ -1,6 +1,6 @@
 <?php
 
-namespace amteich\Twig;
+namespace Wearejust\Kirby\Twig;
 
 use \Kirby\Toolkit\Str;
 use \Kirby\Cms\Template;

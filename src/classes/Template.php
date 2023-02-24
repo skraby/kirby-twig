@@ -1,6 +1,6 @@
 <?php
 
-namespace amteich\Twig;
+namespace Wearejust\Kirby\Twig;
 
 use Exception;
 use Kirby\Cms\App;
@@ -61,7 +61,7 @@ class Template extends \Kirby\Cms\Template
      */
     public function file(): ?string
     {
-        $usephp = option('amteich.twig.usephp', true);
+        $usephp = option('wearejust.twig.usephp', true);
         $type = $this->type();
 
         if ($this->hasDefaultType() === true) {

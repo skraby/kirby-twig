@@ -1,17 +1,21 @@
 {
-    "name": "amteich/kirby-twig",
+    "name": "wearejust/kirby-twig",
     "description": "Twig templating support for Kirby CMS",
     "type": "kirby-plugin",
     "version": "4.2.3",
     "license": "MIT",
     "authors": [
         {
-            "name": "Christian Zehetner",
-            "email": "christian@am-teich.com"
+            "name": "Cees van Egmond",
+            "email": "cees.vanegmond@wearejust.com"
         },
         {
-            "name": "Florens Verschelde",
-            "email": "florens@fvsch.com"
+            "name": "Sietse Veenman",
+            "email": "sietse.veenman@wearejust.com"
+        },
+        {
+            "name": "Duncan Pronk",
+            "email": "duncan.pronk@wearejust.com"
         }
     ],
     "require": {
@@ -20,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "amteich\\Twig\\": "src/classes/"
+            "Wearejust\\Kirby\\Twig\\": "src/classes/"
         }
     },
     "config": {

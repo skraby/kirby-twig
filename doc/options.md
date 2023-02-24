@@ -5,7 +5,7 @@
 ```php
 // Define a directory as a Twig namespace, that can be used as:
 //   {% include '@mynamespace/something.twig' %}
-'amteich.twig.namespaces' => [
+'wearejust.twig.namespaces' => [
   'mynamespace' => 'mydirectory',
 ],
 
@@ -15,27 +15,27 @@
 //   {% include '@mynamespace/something.twig' %}
 'ready' => function () {
   return [
-    'amteich.twig.namespaces' => [
+    'wearejust.twig.namespaces' => [
       'mynamespace' => kirby()->root()->index() . '/mydirectory',
     ]
   ];
 },
 
 // Load an extension
-'amteich.twig.env.extensions.intl' => 'Twig\\Extra\\Intl\\IntlExtension',
+'wearejust.twig.env.extensions.intl' => 'Twig\\Extra\\Intl\\IntlExtension',
 
 // Expose an existing function in templates
-'amteich.twig.env.functions' => [
+'wearejust.twig.env.functions' => [
   'myfunction' => 'myCustomFunction'
 ],
 
 // Expose an existing function in templates as a filter
-'amteich.twig.env.filters' => [
+'wearejust.twig.env.filters' => [
   'myfilter' => 'myCustomFilter'
 ],
 
 // Expose a twig test function for templates
-'amteich.twig.env.tests' => [
+'wearejust.twig.env.tests' => [
   'of_type' => function ($var, $typeTest) {
       switch ($typeTest)
       {
@@ -66,7 +66,7 @@ See [Using your own functions in templates](functions.md) for details about Twig
 ```php
 // Should we use .php templates as fallback when .twig
 // templates don't exist? Set to false to only allow Twig templates
-'amteich.twig.usephp' => true
+'wearejust.twig.usephp' => true
 
 // Use Twig’s PHP cache?
 // Enabling Twig's cache can give a speed boost to pages with changing
@@ -74,13 +74,13 @@ See [Using your own functions in templates](functions.md) for details about Twig
 // version of the template when building the response.
 // But if you have static text content in your Twig templates, you won’t
 // see content changes until you manually remove the `site/cache/twig` folder.
-'amteich.twig.cache' => false
+'wearejust.twig.cache' => false
 
 // Disable autoescaping or specify autoescaping type
 // http://twig.sensiolabs.org/doc/api.html#environment-options
-'amteich.twig.autoescape' => false | 'html'
+'wearejust.twig.autoescape' => false | 'html'
 
 // Should Twig throw errors when using undefined variables or methods?
 // Defaults to the value of the 'debug' option
-'amteich.twig.strict' => option('debug', false)
+'wearejust.twig.strict' => option('debug', false)
 ```

@@ -1,6 +1,6 @@
 <?php
 
-namespace amteich\Twig;
+namespace Wearejust\Kirby\Twig;
 
 class Tests {
   public static function of_type ($var, $typeTest, $className = '') {
