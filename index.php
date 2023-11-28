@@ -25,11 +25,10 @@ Kirby::plugin('wearejust/twig', [
                     $file = $kirby->root('snippets') . '/' . $name . '.twig';
                     if (file_exists($file)) {
                         return twig('@snippets/' . $name . '.twig', $data);
-                    }
-                    else {
+                    } else {
                         $file = $kirby->extensions('snippets')[$name] ?? null;
 
-                        if (Str::endsWith(strtolower($file), '.twig')) {
+                        if (null !== $file && Str::endsWith(strtolower($file), '.twig')) {
                             return twig($name . '.twig', $data);
                         }
                     }
