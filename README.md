@@ -2,7 +2,7 @@
 
 <img src="doc/kirby-twig.png" width="200" alt="">
 
--   Adds support for [Twig templates](http://twig.sensiolabs.org/) to [Kirby CMS](https://getkirby.com/) (3.0+).
+-   Adds support for [Twig templates](http://twig.sensiolabs.org/) to [Kirby CMS](https://getkirby.com/) (3.0+ and 4.0+).
 -   PHP templates still work, you don’t have to rewrite them if you don’t want to.
 
 
