@@ -4,7 +4,7 @@
 require_once __DIR__ . '/src/helpers.php';
 
 use Kirby\Cms\App;
-use Kirby\Toolkit\Tpl as Snippet;
+use Kirby\Template\Snippet;
 
 Kirby::plugin('wearejust/twig', [
     'options' => [
@@ -14,7 +14,7 @@ Kirby::plugin('wearejust/twig', [
         'template' => function (App $kirby, string $name, string $contentType = 'html', string $defaultType = 'html') {
             return new Wearejust\Kirby\Twig\Template($name, $contentType, $defaultType);
         },
-        'snippet' => function (Kirby $kirby, string $name, array $data = []) {
+        'snippet' => function (Kirby $kirby, string $name, array $data = [], bool $slots = false) {
             $snippets = A::wrap($name);
 
             foreach ($snippets as $name) {
@@ -39,7 +39,7 @@ Kirby::plugin('wearejust/twig', [
                 }
             }
 
-            return Snippet::load($file, $data);
+		    return Snippet::factory($name, $data, $slots);
         }
     ]
 ]);
