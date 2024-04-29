@@ -230,6 +230,12 @@ class Environment
             $this->addCallable('test', $name, $func);
         }
 
+        if ($callbacks = option('wearejust.twig.ready', false)) {
+            foreach ($callbacks as $fn) {
+                $fn($this, $kirby);
+            }
+        }
+
         // Make sure the instance is stored / overwritten
         static::$instance = $this;
     }
