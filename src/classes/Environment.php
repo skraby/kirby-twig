@@ -327,7 +327,7 @@ class Environment
             // Debug mode off: show the site's error page
             try {
                 $kirby = Kirby::instance();
-                $page = $kirby->site()->page($kirby->get('option', 'error'));
+                $page = $kirby->site()->page($kirby->option('error'));   
                 if ($page) return $kirby->render($page);
             }
             // avoid loops
